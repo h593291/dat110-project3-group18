@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../dat110-project3-testing/ChordDHTPeer-Project3-UnitTests/ChordDHTPeer-Project3-UnitTests.iml" filepath="$PROJECT_DIR$/../dat110-project3-testing/ChordDHTPeer-Project3-UnitTests/ChordDHTPeer-Project3-UnitTests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/dat110-project3-group18.iml" filepath="$PROJECT_DIR$/.idea/dat110-project3-group18.iml" />
     </modules>
   </component>
