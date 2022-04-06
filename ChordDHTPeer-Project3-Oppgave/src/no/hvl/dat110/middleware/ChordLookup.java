@@ -83,7 +83,7 @@ public class ChordLookup {
 			// i.e. (nodeID+1 <= finger <= key-1) using the ComputeLogic
 			boolean member = Util.computeLogic(stub.getNodeID(), node.getNodeID().add(BigInteger.ONE), key.subtract(BigInteger.ONE));
 			// if logic returns true, then return the finger (means finger is the closest to key)
-			if(member) return finger;
+			if(member) return stub;
 		}
 		// returns at least one predecessor
 		return node;
