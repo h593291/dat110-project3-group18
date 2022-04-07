@@ -16,6 +16,7 @@ public class Starter {
 
         for(Thread t : threads) {
             t.start();
+            try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); }
         }
 
         for(Thread t : threads) {

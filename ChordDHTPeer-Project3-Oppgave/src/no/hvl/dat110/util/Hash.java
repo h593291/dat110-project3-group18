@@ -57,7 +57,7 @@ public class Hash {
 		// find the digest length
 		// int digestlen = 128;
 		
-		return 128*8;
+		return 128;
 	}
 	
 	public static String toHex(byte[] digest) {

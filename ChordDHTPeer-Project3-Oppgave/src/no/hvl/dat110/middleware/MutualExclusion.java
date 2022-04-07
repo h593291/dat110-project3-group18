@@ -68,7 +68,7 @@ public class MutualExclusion {
 		// start MutualExclusion algorithm
 		
 		// first, removeDuplicatePeersBeforeVoting. A peer can contain 2 replicas of a file. This peer will appear twice
-		List<Message> activenodes = removeDuplicatePeersBeforeVoting(); //TODO impl
+		List<Message> activenodes = removeDuplicatePeersBeforeVoting();
 
 		// multicast the message to activenodes (hint: use multicastMessage)
 		multicastMessage(message, activenodes);
@@ -87,6 +87,7 @@ public class MutualExclusion {
 			mutexqueue.clear();
 		}
 
+		// return permission
 		return permission;
 	}
 	
@@ -112,7 +113,7 @@ public class MutualExclusion {
 		if (message.getNodeIP().equals(node.getNodeName())) {
 			message.setAcknowledged(true);
 			onMutexAcknowledgementReceived(message);
-			return; //?
+			return;
 		}
 			
 		int caseid = -1;
@@ -171,7 +172,8 @@ public class MutualExclusion {
 				// if sender looses, queue it
 				int myClock = clock.getClock();
 				int theirClock = message.getClock();
-				boolean isMyNodeIDLowest = (node.getNodeID().compareTo(message.getNodeID()) < 0);
+				// this is "my node id highest"??. tests are more stable when like this, though
+				boolean isMyNodeIDLowest = (node.getNodeID().compareTo(message.getNodeID()) > 0);
 				boolean iWin = false;
 				if (myClock < theirClock) iWin = true;
 				if (myClock == theirClock && isMyNodeIDLowest) iWin = true;
